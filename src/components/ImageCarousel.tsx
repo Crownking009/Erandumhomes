@@ -25,10 +25,10 @@ export default function ImageCarousel() {
         <motion.div
           id="scrolling-content"
           className="flex gap-4"
-          initial={{ x: 0 }}
-          animate={{ x: "-50%" }}
+          initial={{ x: "-50%" }}
+          animate={{ x: 0 }}
           transition={{
-            duration: 25, // Adjusted speed to be "not slow" as requested
+            duration: 15, // Faster movement as requested
             ease: "linear",
             repeat: Infinity,
           }}

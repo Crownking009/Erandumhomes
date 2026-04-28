@@ -88,7 +88,7 @@ export default function App() {
 
   return (
     <HelmetProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.MODE === 'production' ? '/Erandumhomes' : '/'}>
         <div className="min-h-screen flex flex-col">
           <Navbar isAdmin={isAdmin} onLogout={() => handleLogin(false)} />
           <main className="flex-grow">
