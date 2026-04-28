@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import { Property, Inquiry, HeroConfig } from './types';
@@ -88,7 +88,7 @@ export default function App() {
 
   return (
     <HelmetProvider>
-      <BrowserRouter basename={import.meta.env.MODE === 'production' ? '/Erandumhomes' : '/'}>
+      <HashRouter>
         <div className="min-h-screen flex flex-col">
           <Navbar isAdmin={isAdmin} onLogout={() => handleLogin(false)} />
           <main className="flex-grow">
@@ -116,7 +116,7 @@ export default function App() {
           </main>
           <Footer />
         </div>
-      </BrowserRouter>
+      </HashRouter>
     </HelmetProvider>
   );
 }
