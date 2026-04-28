@@ -15,7 +15,7 @@ interface HeroProps {
 
 export default function Hero({ config, onSearch }: HeroProps) {
   return (
-    <section className="relative h-screen min-h-[700px] w-full overflow-hidden flex items-start md:items-center justify-center pt-40 md:pt-32">
+    <section className="relative min-h-[110vh] w-full overflow-hidden flex items-center justify-center py-20">
       {/* Background Video */}
       <div className="absolute inset-0 z-0">
         <video
@@ -29,18 +29,15 @@ export default function Hero({ config, onSearch }: HeroProps) {
         >
           <source 
             src={config.videoUrl} 
-            // src="/my-local-video.mp4" // UNCOMMENT TO USE LOCAL VIDEO FROM public/my-local-video.mp4
             type="video/mp4" 
           />
         </video>
-        {/* If you want a static image instead of video, uncomment below and comment out video above */}
-        {/* <img src="/hero-bg.jpg" className="w-full h-full object-cover" /> */}
         {/* Layered Overlays */}
-        <div className="absolute inset-0 bg-primary/60 backdrop-blur-[2px]" />
+        <div className="absolute inset-0 bg-primary/65 backdrop-blur-[2px]" />
         <div className="absolute inset-0 bg-linear-to-b from-primary/70 via-transparent to-secondary" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full text-center mt-20">
         <motion.div
            initial={{ opacity: 0, y: 50 }}
            animate={{ opacity: 1, y: 0 }}
@@ -50,32 +47,32 @@ export default function Hero({ config, onSearch }: HeroProps) {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.5, duration: 1 }}
-            className="flex items-center justify-center gap-4 mb-8"
+            className="flex items-center justify-center gap-4 mb-4 md:mb-8"
           >
-            <div className="w-12 h-[1px] bg-accent" />
+            <div className="w-8 md:w-12 h-[1px] bg-accent" />
             <span 
-              className="text-accent uppercase tracking-[0.5em] font-black text-2xl md:text-5xl"
+              className="text-accent uppercase tracking-[0.5em] font-black text-xl md:text-5xl"
               style={{ WebkitTextStroke: '0.5px white' }}
             >
               ERANDUM HOMES
             </span>
-            <div className="w-12 h-[1px] bg-accent" />
+            <div className="w-8 md:w-12 h-[1px] bg-accent" />
           </motion.div>
 
-          <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-display font-medium text-white mb-10 leading-[0.9] tracking-tighter">
+          <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-display font-medium text-white mb-6 md:mb-10 leading-[0.9] tracking-tighter">
             {config.title} <br />
             <span className="italic font-light text-accent">{config.subtitle}</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-14 font-light leading-relaxed italic">
+          <p className="text-base md:text-xl text-white/80 max-w-2xl mx-auto mb-8 md:mb-14 font-light leading-relaxed italic">
             Curating the finest collection of luxury properties in Lagos. <br className="hidden md:block" /> 
             Experience a stay defined by elegance, security, and prestige.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6 mb-12 md:mb-16">
             <Link
               to="/listings"
-              className="group relative bg-white text-primary px-12 py-6 text-[10px] uppercase tracking-[0.4em] font-black overflow-hidden luxury-shadow transition-all hover:pr-16"
+              className="group relative bg-white text-primary px-10 md:px-12 py-4 md:py-6 text-[10px] uppercase tracking-[0.4em] font-black overflow-hidden luxury-shadow transition-all hover:pr-16"
             >
               <span className="relative z-10">Explore Inventory</span>
               <div className="absolute inset-0 bg-accent translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
@@ -83,7 +80,7 @@ export default function Hero({ config, onSearch }: HeroProps) {
             
             <a
               href="#contact"
-              className="backdrop-blur-md bg-white/10 border border-white/20 text-white px-12 py-6 text-[10px] uppercase tracking-[0.4em] font-black hover:bg-white hover:text-primary transition-all"
+              className="backdrop-blur-md bg-white/10 border border-white/20 text-white px-10 md:px-12 py-4 md:py-6 text-[10px] uppercase tracking-[0.4em] font-black hover:bg-white hover:text-primary transition-all"
             >
               Contact Concierge
             </a>
@@ -94,7 +91,7 @@ export default function Hero({ config, onSearch }: HeroProps) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 1 }}
-            className="max-w-5xl mx-auto"
+            className="max-w-5xl mx-auto pb-20"
           >
             <SearchBar onSearch={onSearch} variant="glass" />
           </motion.div>
